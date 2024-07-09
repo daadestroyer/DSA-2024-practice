@@ -1,6 +1,6 @@
 package BasicRecursion_02;
 
-public class App01_PrintNumberWithoutLoop {
+public class App01_Print_1ToN_UsingRecursion {
     public static void printNos(int N) {
         if (N == 0) {
             return;
