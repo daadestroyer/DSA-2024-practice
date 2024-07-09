@@ -1,4 +1,4 @@
-package BasicMaths;
+package BasicMaths_01;
 
 public class App01_CountDigits_1 {
     static int evenlyDivides(int N) {

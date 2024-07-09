@@ -1,4 +1,4 @@
-package BasicMaths;
+package BasicMaths_01;
 
 public class App08_PrimeNo {
     public static void main(String[] args) {

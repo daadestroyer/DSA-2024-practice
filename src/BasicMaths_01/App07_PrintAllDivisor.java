@@ -1,4 +1,4 @@
-package BasicMaths;
+package BasicMaths_01;
 
 public class App07_PrintAllDivisor {
     public static void main(String[] args) {

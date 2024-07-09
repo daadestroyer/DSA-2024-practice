@@ -1,4 +1,4 @@
-package BasicMaths;
+package BasicMaths_01;
 
 public class App02_CountDigits_2 {
     static int countTotalDigits(int N) {
