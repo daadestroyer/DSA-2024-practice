@@ -30,6 +30,7 @@ public class App02_BinarySearch {
     }
 
     public static void main(String[] args) {
+        // Time complexity of binary search is O(logn)
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int element = 5;
         // int res = binarySearchIteratively(arr, 0, arr.length - 1, element);

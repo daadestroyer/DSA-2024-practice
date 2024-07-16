@@ -1,6 +1,7 @@
 package Searching_04;
 
 public class App01_LinearSearch {
+    // Time complexity of this is : O(N)
     public static void main(String[] args) {
         int[] arr = {2, 1, 5, 9, 10, 8};
         int element = 8;
