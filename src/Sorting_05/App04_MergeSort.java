@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.TreeSet;
 
 public class App04_MergeSort {
-    static int[] mergeArray(int[] arr, int[] fh, int[] sh) {
+    static int[] mergeArray( int[] fh, int[] sh) {
         int[] res = new int[fh.length + sh.length];
 
         int i = 0; // points to first half array 0th index
@@ -43,7 +43,7 @@ public class App04_MergeSort {
         int mid = (low + high) / 2;
         int[] fh = mergeSort(arr, low, mid);
         int[] sh = mergeSort(arr, mid + 1, high);
-        return mergeArray(arr, fh, sh);
+        return mergeArray(fh, sh);
     }
 
     public static void main(String[] args) {
