@@ -35,6 +35,8 @@ public class App{
 
         Map.Entry<String, Integer> stringIntegerEntry = employeeSalaries.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toList()).get(n-1);
         System.out.println(stringIntegerEntry);
+
+        System.out.println(2%4);
     }
 
     private static void findNthHighestSal(int n, Map<String, Integer> employeeSalaries) {
