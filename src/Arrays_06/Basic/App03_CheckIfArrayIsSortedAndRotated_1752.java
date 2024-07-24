@@ -1,6 +1,6 @@
 package Arrays_06.Basic;
 
-public class App03_CheckIfArrayIsSortedAndRotated {
+public class App03_CheckIfArrayIsSortedAndRotated_1752 {
     public static boolean check(int[] nums) {
         int ascendingOrderBreak = 0;
         for (int i = 1; i < nums.length; i++) {

@@ -1,6 +1,6 @@
 package Arrays_06.Basic;
 
-public class App04_RemoveDuplicatesFromSortedArray {
+public class App04_RemoveDuplicatesFromSortedArray_26 {
     public static int removeDuplicates(int[] nums) {
         int slow = 0;
         int fast = 1;

@@ -2,7 +2,7 @@ package Arrays_06.Basic;
 
 import java.util.Arrays;
 
-public class App05_RotateArray {
+public class App05_RotateArray_189 {
     static void reverseArray(int[] nums, int lo, int hi) {
         while (lo <= hi) {
             int temp = nums[lo];
