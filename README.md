@@ -10,4 +10,14 @@ Stream and Collecting : O(N)
 so it takes O(N)
 ````
 
+#### Using collectors.toCollection(ArrayList::new) to get ArrayList<Integer> and not List
+````
+ArrayList<Integer> list = new ArrayList<>();
+ArrayList<Integer> collect = list.stream().collect(Collectors.toCollection(ArrayList::new));
+````
 
+#### Convert TreeSet to ArrayList
+````
+TreeSet<Integer> ts = new TreeSet<Integer>();
+ArrayList<Integer> res = ts.stream.collect(Collectors.toCollection(ArrayList::new));
+````
