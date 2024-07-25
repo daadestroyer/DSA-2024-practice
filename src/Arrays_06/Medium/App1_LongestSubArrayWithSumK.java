@@ -71,7 +71,7 @@ public class App1_LongestSubArrayWithSumK {
             if (hm.containsKey(rem)) {
                 len = Math.max(len, i - hm.get(rem));
             }
-            if (!hm.containsKey(rem)) {
+            if (!hm.containsKey(sum)) {
                 hm.put(sum, i);
             }
         }
