@@ -9,14 +9,15 @@ public class App08_NextPermutation_31 {
         arr[idx1] = arr[idx2];
         arr[idx2] = temp;
     }
-    static void reverse(int[] arr , int idx1,int idx2){
-        while(idx1 < idx2){
-            swap(arr,idx1++,idx2--);
+
+    static void reverse(int[] arr, int idx1, int idx2) {
+        while (idx1 < idx2) {
+            swap(arr, idx1++, idx2--);
         }
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
+        int[] nums = {2, 1, 5, 4, 3, 0, 0};
         int n = nums.length;
         int i = n - 2;
         while (i >= 0 && nums[i] >= nums[i + 1]) {
@@ -29,7 +30,7 @@ public class App08_NextPermutation_31 {
             }
             swap(nums, i, j);
         }
-        reverse(nums,i+1,n-1);
+        reverse(nums, i + 1, n - 1);
 
         System.out.println(Arrays.toString(nums));
     }
