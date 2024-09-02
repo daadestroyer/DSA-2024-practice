@@ -11,11 +11,9 @@ public class App03_3Sum_15 {
         for (int lo = 0; lo < n - 2; lo++) {
             for (int mid = lo + 1; mid < n - 1; mid++) {
                 for (int hi = mid + 1; hi < n; hi++) {
-                    ArrayList<Integer> al = new ArrayList<>();
                     if (nums[lo] + nums[mid] + nums[hi] == 0) {
-                        al.add(nums[lo]);
-                        al.add(nums[mid]);
-                        al.add(nums[hi]);
+                        List<Integer> al = Arrays.asList(nums[lo], nums[mid], nums[hi]);
+
                         Collections.sort(al);
                         if (!res.contains(al)) {
                             res.add(al);
@@ -38,7 +36,7 @@ public class App03_3Sum_15 {
                 while (mid < hi) {
                     if (nums[mid] + nums[hi] == target) {
                         res.add(Arrays.asList(nums[lo], nums[mid], nums[hi]));
-                        // skipping the same numbers to prevent diplicates
+
                         while (mid < hi && nums[lo] == nums[mid + 1]) {
                             mid++;
                         }
@@ -47,16 +45,17 @@ public class App03_3Sum_15 {
                         }
                         mid++;
                         hi--;
-                    } else if (nums[mid] + nums[hi] < target) {
-                        mid++;
-                    } else {
+                    } else if (nums[mid] + nums[hi] > target) {
                         hi--;
+                    } else {
+                        mid++;
                     }
                 }
             }
         }
         return res;
     }
+
 
     public static void main(String[] args) {
         int[] nums = {-1, 0, 1, 2, -1, -4};
