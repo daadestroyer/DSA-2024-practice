@@ -3,7 +3,7 @@ package Arrays_06.Medium;
 import java.util.HashMap;
 import java.util.Map;
 
-public class App1_LongestSubArrayWithSumK {
+public class App1_LongestSubArrayWithSumK_GFG {
     public static int lenOfLongSubArrNaive(int A[], int N, int K) {
         int sum = 0;
         int len = 0;
