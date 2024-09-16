@@ -11,13 +11,13 @@ public class App01_RemoveOuterMostParentheses_1021 {
                     sb.append(c);
                 }
                 opened++;
-
+                System.out.println("Opened = "+opened);
             } else {
                 if (opened > 1) {
                     sb.append(c);
                 }
                 opened--;
-
+                System.out.println("Opened = "+opened);
             }
         }
         System.out.println(sb.toString());
