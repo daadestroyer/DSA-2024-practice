@@ -1,4 +1,4 @@
-package Strings_07;
+package Strings_07.Easy;
 
 public class App01_RemoveOuterMostParentheses_1021 {
     public static void main(String[] args) {

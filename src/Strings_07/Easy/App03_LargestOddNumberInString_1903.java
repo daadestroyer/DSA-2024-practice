@@ -1,4 +1,4 @@
-package Strings_07;
+package Strings_07.Easy;
 
 public class App03_LargestOddNumberInString_1903 {
     public static String findLargestOddNumber(String s) {

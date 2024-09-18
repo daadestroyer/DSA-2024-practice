@@ -1,4 +1,4 @@
-package Strings_07;
+package Strings_07.Easy;
 
 import java.util.Arrays;
 import java.util.Collection;
