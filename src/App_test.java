@@ -1,19 +1,14 @@
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class App_test {
     public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(1, 2, 40, 10, 4);
+        // List<Integer> collect = list.stream().sorted(Comparator.comparingInt(Integer::intValue).reversed()).collect(Collectors.toList());
 
-        String[] s = {"flower","flow","flight"};
-        Arrays.sort(s, (str1, str2) -> str1.length() - str2.length());
-        System.out.println(Arrays.toString(s));
-        String original = s[0]; // flow
-        String temp = "";
-        int ptr = 0;
-        while (ptr < original.length()) {
-            temp = original.substring(0, ptr+1);
-            System.out.println(temp);
-            ptr++;
-        }
+        Collections.sort(list, Collections.reverseOrder());
+
+        System.out.println(list);
 
     }
 }
