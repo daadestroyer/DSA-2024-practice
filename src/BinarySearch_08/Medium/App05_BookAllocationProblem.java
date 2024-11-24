@@ -62,5 +62,6 @@ public class App05_BookAllocationProblem {
         System.out.println(findPagesOptimal(arr, noOfBooks, noOfStudent));
 
 
+
     }
 }
