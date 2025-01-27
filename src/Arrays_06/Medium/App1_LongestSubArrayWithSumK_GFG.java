@@ -35,7 +35,9 @@ public class App1_LongestSubArrayWithSumK_GFG {
 
         for (int i = 0; i < n; i++) {
             sum += arr[i];
-
+            if (!hm.containsKey(sum)) {
+                hm.put(sum, i);
+            }
             if (sum == k) {
                 len = Math.max(len, i + 1);
             }
@@ -44,9 +46,7 @@ public class App1_LongestSubArrayWithSumK_GFG {
                 len = Math.max(len, i - hm.get(rem));
                 System.out.println("len = " + len);
             }
-            if (!hm.containsKey(sum)) {
-                hm.put(sum, i);
-            }
+
         }
         return len;
     }
