@@ -4,14 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class App02_SecondLargestElementInArrayWithoutSorting {
-    public static void main(String[] args) {
-        List<Integer> arr = List.of(12, 35 ,1 ,10, 34, 1);
-        int secondLargestElement = findSecondLargestElement(arr);
-        System.out.println(secondLargestElement);
-
-    }
-
-    private static int findSecondLargestElement(List<Integer> arr) {
+    private static int findSecondLargestElement(int[] arr) {
         int firstLargest = Integer.MIN_VALUE;
         int secondLargest = Integer.MIN_VALUE;
 
@@ -20,12 +13,19 @@ public class App02_SecondLargestElementInArrayWithoutSorting {
                 secondLargest = firstLargest;
                 firstLargest = i;
 
-            }
-            else if(i < firstLargest && i > secondLargest){
+            } else if (i < firstLargest && i > secondLargest) {
                 secondLargest = i;
             }
         }
 
         return secondLargest == 0 ? -1 : secondLargest;
+    }
+
+
+    public static void main(String[] args) {
+        int[] arr = {12, 35, 1, 10, 34, 1};
+        System.out.println(findSecondLargestElement(arr));
+
+
     }
 }

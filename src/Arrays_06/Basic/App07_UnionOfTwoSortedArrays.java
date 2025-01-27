@@ -1,6 +1,7 @@
 package Arrays_06.Basic;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class App07_UnionOfTwoSortedArrays {
@@ -12,9 +13,9 @@ public class App07_UnionOfTwoSortedArrays {
         for(int i : arr2){
             ts.add(i);
         }
-        ArrayList<Integer> res = ts.stream().collect(java.util.stream.Collectors.toCollection(ArrayList::new));
+        return new ArrayList<>(ts);
 
-        return res;
+
 
     }
     public static void main(String[] args) {
