@@ -12,7 +12,8 @@ public class App{
         print1ToN(counter,n);
     }
     public static void main(String[] args) {
-        print1ToN(1,10);
+//        print1ToN(1,10);
+
     }
 
 

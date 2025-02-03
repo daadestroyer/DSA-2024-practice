@@ -8,8 +8,8 @@ public class App05_MaximumSubArray_KadanesAlgorithm_53 {
     }
 
     private static int maximumSubArray(int[] arr) {
-        int csum = Integer.MIN_VALUE;
-        int osum = Integer.MIN_VALUE;
+        int csum = Integer.MIN_VALUE, osum = Integer.MIN_VALUE;
+
         for (int i : arr) {
             if (csum >= 0) {
                 csum += i;

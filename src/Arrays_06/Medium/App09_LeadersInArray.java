@@ -2,6 +2,7 @@ package Arrays_06.Medium;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class App09_LeadersInArray {
@@ -27,17 +28,18 @@ public class App09_LeadersInArray {
         int biggestNo = arr[arr.length - 1];
         list.add(biggestNo);
         for (int i = arr.length - 2; i >= 0; i--) {
-            if (arr[i] > biggestNo) {
+            if (arr[i] >= biggestNo) {
                 list.add(arr[i]);
                 biggestNo = arr[i];
             }
         }
         Collections.reverse(list);
+
         return list;
     }
 
     public static void main(String[] args) {
-        int[] arr = {10, 22, 12, 3, 0, 6};
+        int[] arr = {61, 61, 17};
         // List<Integer> res = bruteForce(arr);
         List<Integer> res = optimalApproach(arr);
         System.out.println(res);

@@ -44,7 +44,6 @@ public class App1_LongestSubArrayWithSumK_GFG {
             int rem = sum - k;
             if (hm.containsKey(rem)) {
                 len = Math.max(len, i - hm.get(rem));
-                System.out.println("len = " + len);
             }
 
         }
@@ -54,8 +53,8 @@ public class App1_LongestSubArrayWithSumK_GFG {
     public static void main(String[] args) {
         int arr[] = {10, 5, 2, 7, 1, -10};
         int k = 15;
-           System.out.println(optimizeApproach(arr, arr.length, k));
-        // System.out.println(usingHashMap(arr, arr.length, k));
+           //System.out.println(optimizeApproach(arr, arr.length, k));
+         System.out.println(usingHashMap(arr, arr.length, k));
     }
 
 
