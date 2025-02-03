@@ -1,6 +1,8 @@
 package Arrays_06.Medium;
 
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 public class App09_LongestConsecutiveSubSeq_128 {
     static boolean linearSearch(int[] nums, int element) {
@@ -28,28 +30,24 @@ public class App09_LongestConsecutiveSubSeq_128 {
     }
 
     static int optimalApproach(int[] nums) {
-        HashSet<Integer> set = new HashSet<>();
-        int res = 0;
-        // first add all element into hashmap
+        Set<Integer> st = new HashSet<>();
         for (int i : nums) {
-            set.add(i);
+            st.add(i);
         }
-        // now iterate over array check each lesser element of each element exist or not
-        // if not exist then count in forward direction check next element exist or not
-        // and count the sequence
-
+        int maxLen = 0;
         for (int i : nums) {
-            if (!set.contains(i - 1)) {
-                int seq = 0;
-
-                while (set.contains(i)) {
-                    i++;
-                    seq++;
+            if (!st.contains(i - 1)) {
+                int startnum = i;
+                int currLen = 1;
+                while (st.contains(startnum + 1)) {
+                    currLen += 1;
+                    startnum += 1;
+                    st.remove(startnum); // this is important this reduces redundancy
                 }
-                res = Math.max(res, seq);
+                maxLen = Math.max(maxLen, currLen);
             }
         }
-        return res;
+        return maxLen;
     }
 
     public static void main(String[] args) {
