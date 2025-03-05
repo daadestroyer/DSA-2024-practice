@@ -6,7 +6,9 @@ import java.util.List;
 public class App01_PascalTriangle_118 {
     static List<List<Integer>> generate(int n) {
         List<List<Integer>> fres = new ArrayList<>();
-        List<Integer> cres, pres = null;
+        List<Integer> cres = null;
+        List<Integer> pres = null;
+
         for (int i = 0; i < n; i++) {
             cres = new ArrayList<>();
             for (int j = 0; j <= i; j++) {

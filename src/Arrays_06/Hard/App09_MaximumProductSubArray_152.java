@@ -16,10 +16,18 @@ public class App09_MaximumProductSubArray_152 {
                 maxProd = minProd;
                 minProd = temp;
             }
+            // if in case any negative no came and if we multiply with maxProd it will
+            // give more smaller maxProd, that's why we are maintaining minProd also and
+            // also checking if any negative number came we will swap minProd and maxProd
+            // then after that we will make maxProd accordingly
             maxProd = Math.max(nums[i], nums[i] * maxProd);
             minProd = Math.min(nums[i], nums[i] * minProd);
+            System.out.println("maxP = "+maxProd);
+            System.out.println("minP = "+minProd);
             res = Math.max(res, maxProd);
         }
+
+        System.out.println(Math.max(-2,-12));
 
     }
 }

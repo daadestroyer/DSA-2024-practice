@@ -10,6 +10,7 @@ public class App02_ReverseWordsInAString_151 {
     public static void main(String[] args) {
         String s = "a good   example";
         String[] str = s.trim().split("\\s+"); // --> \\s means skipping one white space
+
         // --> \\s+ means skipping all white space after any word
         List<String> lst = Arrays.asList(str);
         Collections.reverse(lst);
@@ -17,5 +18,8 @@ public class App02_ReverseWordsInAString_151 {
         // after each work from the given data structure
 
         System.out.println(res);
+
+
+        Integer[] arr = {};
     }
 }

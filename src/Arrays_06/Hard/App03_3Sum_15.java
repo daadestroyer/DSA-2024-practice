@@ -35,9 +35,9 @@ public class App03_3Sum_15 {
                 int target = 0 - nums[lo];
                 while (mid < hi) {
                     if (nums[mid] + nums[hi] == target) {
-                        res.add(Arrays.asList(nums[lo], nums[mid], nums[hi]));
-
-                        while (mid < hi && nums[lo] == nums[mid + 1]) {
+                        List<Integer> curr_res = Arrays.asList(nums[lo], nums[mid], nums[hi]);
+                        res.add(curr_res);
+                        while (mid < hi && nums[mid] == nums[mid + 1]) {
                             mid++;
                         }
                         while (mid < hi && nums[hi] == nums[hi - 1]) {
@@ -59,8 +59,8 @@ public class App03_3Sum_15 {
 
     public static void main(String[] args) {
         int[] nums = {-1, 0, 1, 2, -1, -4};
-        // List<List<Integer>> res = bruteForceApproach(nums, nums.length);
-        List<List<Integer>> res = optimalApproach(nums, nums.length);
+        List<List<Integer>> res = bruteForceApproach(nums, nums.length);
+        //List<List<Integer>> res = optimalApproach(nums, nums.length);
 
         System.out.println(res);
     }

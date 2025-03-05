@@ -1,15 +1,15 @@
 package Strings_07.Medium;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 
-public class App02_CountNumberOfSubstringsWithKDistinctCharacters {
+public class App02_CountNumberOfSubstringsWithKDistinctCharacters_GFG {
     static int bruteForceApproach(String s, int len, int k) {
+        // TC : O(N^) * O(N) = O(N) cube
+        // SC : O(N)
         int res = 0;
         for (int i = 0; i < len; i++) {
-            System.out.println("i = " + i);
+
             HashSet<Character> set = new HashSet<>();
             for (int j = i; j < len; j++) {
                 set.add(s.charAt(j));
@@ -17,6 +17,8 @@ public class App02_CountNumberOfSubstringsWithKDistinctCharacters {
                 if (set.size() == k) {
                     res++;
                 } else if (set.size() > k) {
+                    // we are breaking it because it we keep on adding then there is
+                    // no use because we want substring which have exactly k distinct character
                     break;
                 }
             }
@@ -33,7 +35,7 @@ public class App02_CountNumberOfSubstringsWithKDistinctCharacters {
             char rightChar = s.charAt(right);
             hm.put(rightChar, hm.getOrDefault(rightChar, 0) + 1);
 
-            while(hm.size() > k) {
+            while (hm.size() > k) {
                 char leftChar = s.charAt(left);
                 hm.put(leftChar, hm.get(leftChar) - 1);
                 if (hm.get(leftChar) == 0) {
@@ -41,18 +43,20 @@ public class App02_CountNumberOfSubstringsWithKDistinctCharacters {
                 }
                 left++;
             }
-            count +=  right - left + 1;
+            count += right - left + 1;
         }
         return count;
     }
 
     public static void main(String[] args) {
-        String s = "aba";
+        String s = "abcd";
         int k = 2;
-        //    System.out.println(bruteForceApproach(s, s.length(), k));
+//            System.out.println(bruteForceApproach(s, s.length(), k));
 
         int ans1 = optimalApproach(s, k);
         int ans2 = optimalApproach(s, k - 1);
+
+        // count with exactly k = count with at most k - count with most k-1
         System.out.println("ans1 = " + ans1 + " ans2 = " + ans2);
 
     }

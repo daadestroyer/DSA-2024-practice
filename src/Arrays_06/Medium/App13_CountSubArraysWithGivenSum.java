@@ -31,8 +31,10 @@ public class App13_CountSubArraysWithGivenSum {
         for (int i : nums) {
             sum += i;
             res += hm.getOrDefault(sum-k, 0);
+            System.out.println("res = "+res);
             hm.put(i, hm.getOrDefault(sum, 0) + 1);
         }
+        System.out.println(hm);
         return res;
     }
 

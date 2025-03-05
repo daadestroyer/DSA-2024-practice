@@ -3,38 +3,49 @@ package Strings_07.Easy;
 import java.util.Arrays;
 
 public class App04_LongestCommonPrefix_14 {
-    private static boolean check(String temp, String[] str) {
-        for (int i = 1; i < str.length; i++) {
-            if (!str[i].contains(temp)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static String longestCommonPrefix(String[] str) {
-        Arrays.sort(str);
-        int idx = 0;
-        String s1 = str[0];
-        String s2 = str[str.length - 1];
-        while (idx < s1.length() && idx < s2.length()) {
-            if (s1.charAt(idx) == s2.charAt(idx)) {
-                idx++;
-            }
-            else{
+    public static boolean itContains(String target, String[] str) {
+        boolean flag = true;
+        for (String s : str) {
+            if (!s.startsWith(target)) {
+                flag = false;
                 break;
             }
         }
-        return s1.substring(0,idx);
+        return flag;
+    }
+
+    public static String bruteForce(String[] str) {
+        String res = "";
+        String first_string = str[0];
+        int first_string_len = first_string.length();
+        for (int i = 0; i < first_string_len; i++) {
+            String check_str = first_string.substring(0, i + 1);
+            if (itContains(check_str, str)) {
+                res = first_string.substring(0, i + 1);
+            }
+        }
+        return res;
+    }
+
+    public static String optimalApproach(String[] str) {
+        Arrays.sort(str);
+        String first_str = str[0];
+        String last_str = str[str.length - 1];
+        int idx = 0;
+        while (idx < first_str.length() && idx < last_str.length()) {
+            if (first_str.charAt(idx) == last_str.charAt(idx)) {
+                idx++;
+            } else {
+                break;
+            }
+        }
+        return first_str.substring(0,idx);
     }
 
     public static void main(String[] args) {
         String[] str = {"flower", "flow", "flight"};
-        String s = longestCommonPrefix(str);
-        System.out.println("res---> " + s);
-
-
+        // String res = bruteForce(str);
+        String res = optimalApproach(str);
+        System.out.println("res = " + res);
     }
-
-
 }

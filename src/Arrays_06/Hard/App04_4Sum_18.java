@@ -14,7 +14,10 @@ public class App04_4Sum_18 {
                 for (int k = j + 1; k < n - 1; k++) {
                     for (int l = k + 1; l < n; l++) {
                         if (A[i] + A[j] + A[k] + A[l] == target) {
-                            res.add(Arrays.asList(A[i], A[j], A[k], A[l]));
+                            List<Integer> curr_res = Arrays.asList(A[i], A[j], A[k], A[l]);
+                            if (!res.contains(curr_res)) {
+                                res.add(curr_res);
+                            }
                         }
                     }
                 }
@@ -24,43 +27,31 @@ public class App04_4Sum_18 {
     }
 
     static List<List<Integer>> optimizedApproach(int[] A, int target) {
-        int n = A.length;
-        if (A == null || n == 0) {
-            return Collections.emptyList();
-        }
         List<List<Integer>> res = new ArrayList<>();
+        int n = A.length;
         Arrays.sort(A);
-
         for (int i = 0; i < n - 3; i++) {
-            // avoiding duplicates for i
-            if (i == 0 || A[i] != A[i - 1]) {
-                for (int j = i + 1; j < n - 2; j++) {
-                    // avoiding duplicates for j
-                    if (j == i + 1 || A[j] != A[j - 1]) {
-                        int target2 = target - A[i] - A[j];
-                        int left = j + 1;
-                        int right = n - 1;
-                        while (left < right) {
-                            int sum = A[left] + A[right];
+            if (i > 0 && A[i] == A[i - 1]) continue;
+            for (int j = i + 1; j < n - 2; j++) {
+                if (j > i + 1 && A[j] == A[j - 1]) continue;
+                int left = j + 1;
+                int right = n - 1;
+                long target2 = (long) target - A[i] - A[j];
+                while (left < right) {
+                    long sum = (long) A[left] + A[right];
+                    if (target2 == sum) {
+                        res.add(Arrays.asList(A[i], A[j], A[left], A[right]));
+                        while (left < right && A[left] == A[left + 1])
+                            left++;
+                        while (left < right && A[right] == A[right - 1])
+                            right--;
 
-                            if (sum == target2) {
-                                res.add(Arrays.asList(A[i], A[j], A[left], A[right]));
-
-                                // avoid duplicates of left
-                                while (left < right && A[left] == A[left - 1]) {
-                                    left++;
-                                }
-                                while (left < right && A[right] == A[right - 1]) {
-                                    right--;
-                                }
-                                left++;
-                                right--;
-                            } else if (sum > target2) {
-                                right--;
-                            } else {
-                                left++;
-                            }
-                        }
+                        left++;
+                        right--;
+                    } else if (sum > target2) {
+                        right--;
+                    } else {
+                        left++;
                     }
                 }
             }
