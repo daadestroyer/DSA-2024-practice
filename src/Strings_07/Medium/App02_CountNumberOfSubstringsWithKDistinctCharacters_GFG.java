@@ -58,6 +58,7 @@ public class App02_CountNumberOfSubstringsWithKDistinctCharacters_GFG {
 
         // count with exactly k = count with at most k - count with most k-1
         System.out.println("ans1 = " + ans1 + " ans2 = " + ans2);
+        System.out.println(ans1+ans2);
 
     }
 }
