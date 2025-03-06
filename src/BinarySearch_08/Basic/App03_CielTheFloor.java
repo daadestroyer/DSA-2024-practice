@@ -16,7 +16,7 @@ public class App03_CielTheFloor {
                 ciel = arr[i];
             }
         }
-        for(int i=arr.length-1 ; i>=0 ; i--){
+        for(int i=0 ; i<arr.length ; i++){
             if(arr[i] >= x){
                 floor = arr[i];
             }

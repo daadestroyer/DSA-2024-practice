@@ -26,7 +26,7 @@ public class App02_CountNumberOfSubstringsWithKDistinctCharacters_GFG {
         return res;
     }
 
-    static int optimalApproach(String s, int k) {
+    static int optimalApproachSlidingWindow(String s, int k) {
         int n = s.length();
         int left = 0;
         int count = 0;
@@ -53,8 +53,8 @@ public class App02_CountNumberOfSubstringsWithKDistinctCharacters_GFG {
         int k = 2;
 //            System.out.println(bruteForceApproach(s, s.length(), k));
 
-        int ans1 = optimalApproach(s, k);
-        int ans2 = optimalApproach(s, k - 1);
+        int ans1 = optimalApproachSlidingWindow(s, k);
+        int ans2 = optimalApproachSlidingWindow(s, k - 1);
 
         // count with exactly k = count with at most k - count with most k-1
         System.out.println("ans1 = " + ans1 + " ans2 = " + ans2);
