@@ -13,7 +13,7 @@ public class App02_DeleteInADoublyLinkedList {
                     return head;
                 }
                 Node ptr = head;
-                for(int i=1 ; ptr != null && i<pos ; i++){
+                for(int i=1 ; i<pos ; i++){
                     ptr = ptr.next;
                 }
                 // delete the last node;
