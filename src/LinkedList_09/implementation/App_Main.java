@@ -10,7 +10,13 @@ public class App_Main {
         System.out.println(linkedlist.currentSize());
         linkedlist.display();
         System.out.println();
+        System.out.println("------");
 
+        System.out.println(linkedlist.searchElement(100));
+        System.out.println(linkedlist.searchElement(10));
+
+        System.out.println("------");
+        System.out.println();
         System.out.println("------");
 
         System.out.println("First : "+linkedlist.getFirst());
@@ -24,6 +30,7 @@ public class App_Main {
         System.out.println();
         System.out.println("Last : "+linkedlist.deleteAtLast());
         linkedlist.display();
+
 
         System.out.println();
         System.out.println(linkedlist.isEmpty());
