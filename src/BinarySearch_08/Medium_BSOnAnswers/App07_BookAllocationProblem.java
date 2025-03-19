@@ -2,7 +2,7 @@ package BinarySearch_08.Medium_BSOnAnswers;
 
 import java.util.Arrays;
 
-public class App05_BookAllocationProblem {
+public class App07_BookAllocationProblem {
     static int countStudent(int[] arr, int pages) {
         int n = arr.length;
         int studentsAlloted = 1;
@@ -38,8 +38,8 @@ public class App05_BookAllocationProblem {
         if (noOfStudent > noOfBooks) {
             return -1;
         }
-        int minPages = Arrays.stream(arr).max().getAsInt();
-        int maxPages = Arrays.stream(arr).sum();
+        int minPages = Arrays.stream(arr).max().getAsInt(); // So, minPages = max(arr[]) ensures that at least one student can be assigned the largest book.
+        int maxPages = Arrays.stream(arr).sum(); // So, maxPages = sum(arr[]) represents the absolute upper bound when only one student gets all books.
         while (minPages <= maxPages) {
             int midPages = (minPages + maxPages) / 2;
             if (countStudent(arr, midPages) > noOfStudent) {
@@ -48,7 +48,7 @@ public class App05_BookAllocationProblem {
                 maxPages = midPages - 1;
             }
         }
-        return minPages;
+            return minPages;
     }
 
     public static void main(String[] args) {

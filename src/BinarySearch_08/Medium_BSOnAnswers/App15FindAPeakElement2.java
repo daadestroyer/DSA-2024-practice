@@ -2,7 +2,7 @@ package BinarySearch_08.Medium_BSOnAnswers;
 
 import java.util.Arrays;
 
-public class App09FindAPeakElement2 {
+public class App15FindAPeakElement2 {
     public static int findMaxInCol(int[][] arr, int col) {
         int idx = 0;
         for (int i = 0; i < arr[0].length; i++) {

@@ -1,7 +1,8 @@
-import java.util.*;
-import java.util.stream.Collectors;
+package BinarySearch_08.Medium_BSOnAnswers;
 
-public class App_test {
+import java.util.Arrays;
+
+public class App06_AggressiveCows_SPOJ {
     public static boolean canWePlace(int tryWithThisDist, int[] stalls, int noOfCows) {
         int cowsPlacedTillNow = 1; // by default place cow 1
         int lastDist = stalls[0];  // at 1st stall
