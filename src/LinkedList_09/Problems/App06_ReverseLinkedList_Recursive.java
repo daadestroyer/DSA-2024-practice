@@ -7,7 +7,6 @@ public class App06_ReverseLinkedList_Recursive {
                 if(head == null || head.next == null){
                     return head;
                 }
-
                 Node newhead = reverseLinkedList(head.next);
                 Node fast = head.next;
                 fast.next = head;
