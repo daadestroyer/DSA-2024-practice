@@ -4,6 +4,10 @@ public class App07_DetectLoopInLinkedList {
     public static void main(String[] args) {
         /*
             public Node detectLoopInLinkedList(Node head){
+               if(head == null || head.next == null){
+                    return false;
+                }
+
                 Node slow = head;
                 Node fast = head;
 
