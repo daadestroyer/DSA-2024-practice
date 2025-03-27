@@ -1,4 +1,4 @@
-package LinkedList_09.Problems;
+package LinkedList_09.Problems.Easy;
 
 public class App01_DoublyLinkedListInsertionAtGivenPosition {
     public static void main(String[] args) {

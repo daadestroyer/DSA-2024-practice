@@ -1,4 +1,4 @@
-package LinkedList_09.Problems;
+package LinkedList_09.Problems.Easy;
 
 public class App09_FindLengthOfLoop {
     public static void main(String[] args) {
