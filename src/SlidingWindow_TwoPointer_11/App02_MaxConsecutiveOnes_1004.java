@@ -14,7 +14,7 @@ public class App02_MaxConsecutiveOnes_1004 {
             if (nums[right] == 0) {
                 maxZero++;
             }
-            while (maxZero > k) {
+            if (maxZero > k) {
                 if (nums[left] == 0) { // as we are shrinking window from left to right
                     maxZero--;         // we need to maintain max zero also
                 }
