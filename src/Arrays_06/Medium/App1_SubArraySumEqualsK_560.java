@@ -3,7 +3,7 @@ package Arrays_06.Medium;
 import java.util.HashMap;
 import java.util.Map;
 
-public class App1_LongestSubArrayWithSumK_GFG {
+public class App1_SubArraySumEqualsK_560 {
 
     public static int optimizeApproach(int[] arr, int n, int k) {
         int slow = 0;
@@ -30,29 +30,28 @@ public class App1_LongestSubArrayWithSumK_GFG {
 
     private static int usingHashMap(int[] arr, int n, int k) {
         Map<Integer, Integer> hm = new HashMap<>();
+        hm.put(0, 1); // Important: 1 way to get sum = 0 before we start
+        int count = 0;
         int sum = 0;
-        int len = 0;
 
-        for (int i = 0; i < n; i++) {
-            sum += arr[i];
-            if (!hm.containsKey(sum)) {
-                hm.put(sum, i);
-            }
-            if (sum == k) {
-                len = Math.max(len, i + 1);
-            }
-            int rem = sum - k;
-            if (hm.containsKey(rem)) {
-                len = Math.max(len, i - hm.get(rem));
+        for (int num : arr) {
+            sum += num;
+
+            // Check if sum - k was previously seen
+            if (hm.containsKey(sum - k)) {
+                count += hm.get(sum - k);
             }
 
+            // Store/update current sum frequency
+            hm.put(sum, hm.getOrDefault(sum, 0) + 1);
         }
-        return len;
+
+        return count;
     }
 
     public static void main(String[] args) {
-        int arr[] = {10, 5, 2, 7, 1, -10};
-        int k = 15;
+        int arr[] = {1,2,31};
+        int k = 3;
            //System.out.println(optimizeApproach(arr, arr.length, k));
          System.out.println(usingHashMap(arr, arr.length, k));
     }
