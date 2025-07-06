@@ -1,6 +1,6 @@
-package Tree_13;
+package Tree_13.BinaryTree;
 
-public class App06_CheckBinaryTreeBalancedOrNot {
+public class App06_CheckBinaryTreeBalancedOrNot_110 {
 
     public static int optimalApproach(TreeNode root) {
         if (root == null) {

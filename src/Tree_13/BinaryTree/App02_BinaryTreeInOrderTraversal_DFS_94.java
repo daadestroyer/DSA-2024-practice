@@ -1,9 +1,9 @@
-package Tree_13;
+package Tree_13.BinaryTree;
 
 
 import java.util.List;
 
-public class App02_BinaryTreeInOrderTraversal_DFS {
+public class App02_BinaryTreeInOrderTraversal_DFS_94 {
     public static void inOrder(TreeNode root, List<Integer> res) {
         if (root == null) {
             return;

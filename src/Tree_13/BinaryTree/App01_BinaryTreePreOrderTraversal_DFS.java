@@ -1,6 +1,5 @@
-package Tree_13;
+package Tree_13.BinaryTree;
 
-import java.util.ArrayList;
 import java.util.List;
 
 class TreeNode {

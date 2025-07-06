@@ -1,9 +1,9 @@
-package Tree_13;
+package Tree_13.BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class App05_HeightOfBinaryTree {
+public class App05_HeightOfBinaryTree_104 {
     public static int recursiveApproach(TreeNode root) {
         if (root == null) {
             return 0;

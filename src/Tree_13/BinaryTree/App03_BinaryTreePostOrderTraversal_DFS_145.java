@@ -1,8 +1,8 @@
-package Tree_13;
+package Tree_13.BinaryTree;
 
 import java.util.List;
 
-public class App03_BinaryTreePostOrderTraversal_DFS {
+public class App03_BinaryTreePostOrderTraversal_DFS_145 {
     public static void postOrder(TreeNode root, List<Integer> res) {
         if (root == null) {
             return;
