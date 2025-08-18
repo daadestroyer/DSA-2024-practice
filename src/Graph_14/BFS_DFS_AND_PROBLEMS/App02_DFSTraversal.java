@@ -17,7 +17,7 @@ public class App02_DFSTraversal {
 
     public static void main(String[] args) {
         ArrayList<Integer> dfs = new ArrayList<>();
-        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>(); // given
         boolean[] vis = new boolean[adj.size()];
         dfs(0, vis, dfs, adj);
         System.out.println(dfs);

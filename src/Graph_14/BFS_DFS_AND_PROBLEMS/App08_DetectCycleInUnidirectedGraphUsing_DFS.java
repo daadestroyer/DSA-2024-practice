@@ -12,7 +12,7 @@ public class App08_DetectCycleInUnidirectedGraphUsing_DFS {
                     return true;
                 }
             } else if (neighbour != parent) {
-                return true;
+                return true; // cycle detected
             }
         }
         return false;

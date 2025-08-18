@@ -1,9 +1,7 @@
 package Graph_14.BFS_DFS_AND_PROBLEMS;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class App03_NumberOfProvinces_547 {
     public void dfs(int i,boolean[] vis,List<List<Integer>> adjList){
@@ -46,6 +44,24 @@ public class App03_NumberOfProvinces_547 {
 
 
     public static void main(String[] args) {
+        /*
+            Time Complexity
+            ---------------
+            m = no of rows
+            n = no of cells
+            Total Cells = m * n
 
+            Initial loop to count fresh oranges and collect rotten ones takes O(m * n).
+            BFS processing is also O(m * n).
+
+            Time Complexity : O(m * n)
+
+            Space Complexity
+            ----------------
+            Queue (rotten_oranges): n worst case, it can hold all m * n elements → O(m * n)
+            No extra visited array, we use the grid in-place →
+
+            Space Complexity : O(m * n)
+        */
     }
 }

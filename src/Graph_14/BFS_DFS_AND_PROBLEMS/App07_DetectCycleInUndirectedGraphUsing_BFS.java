@@ -8,7 +8,7 @@ import java.util.Queue;
 public class App07_DetectCycleInUndirectedGraphUsing_BFS {
     public static boolean bfsCheckCycle(int start, List<List<Integer>> adjList, boolean[] vis) {
         Queue<int[]> qu = new LinkedList<>();
-        qu.add(new int[]{start, -1});
+        qu.add(new int[]{start, -1}); // -1 islie kyuki initial node ka parent koi nahi hai
         vis[start] = true;
 
         while (!qu.isEmpty()) {

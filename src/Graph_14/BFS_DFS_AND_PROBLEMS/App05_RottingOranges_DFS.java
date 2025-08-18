@@ -57,6 +57,7 @@ public class App05_RottingOranges_DFS {
     public static void main(String[] args) {
         int[][] grid = new int[][]{{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
         int time = orangesRottingDFS(grid);
+        System.out.println(time);
     }
 
 

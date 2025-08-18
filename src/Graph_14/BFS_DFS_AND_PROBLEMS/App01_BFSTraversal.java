@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class App01_BFSTraversal {
-    public ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
+    public static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
         ArrayList<Integer> bfs = new ArrayList<>();
         Queue<Integer> q = new LinkedList<>();
         boolean[] vis = new boolean[adj.size()];
