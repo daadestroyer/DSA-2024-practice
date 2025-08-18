@@ -32,5 +32,28 @@ public class App03_FrogJump {
         int res = frogJump(n - 1, heights, dp);
         System.out.println(res);
 
+        /*
+            Time Complexity :
+            -----------------
+            For each index n, we check two possibilities:
+	            •	Jump from n-1
+	            •	Jump from n-2
+	            So, total work per state = O(1).
+                Number of states = n.
+
+                Time Complexity = O(n)
+
+
+            Space Complexity :
+            ------------------
+            There are two types of space usage here:
+                1. DP Array (dp) → size n → O(n)
+	            2.Recursion Call Stack
+	                •	In the worst case, the recursion depth goes down to n.
+	                •	So stack space = O(n).
+
+	            Space Complexity = O(n) + O(n) = O(n)
+
+        */
     }
 }

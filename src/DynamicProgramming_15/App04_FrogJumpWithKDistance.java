@@ -29,5 +29,23 @@ public class App04_FrogJumpWithKDistance {
         Arrays.fill(dp, -1);
         int result = frogJumpWithKDist(n - 1, height, k, dp);
         System.out.println(result);
+
+        /*
+            Time Complexity:
+            ----------------
+            --> for each index j we are looping k times (k jumps) O(k)
+            --> we are iterating to whole height array O(n)
+
+            Total : O(N*K)
+
+            Space Complexity:
+            -----------------
+            --> DP Array of size n - O(N)
+            --> Recursion stack depth --> O(N)
+
+            Total : O(N)
+
+
+        */
     }
 }
