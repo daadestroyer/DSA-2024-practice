@@ -1,4 +1,4 @@
-package DynamicProgramming_15;
+package DynamicProgramming_15.TwoD_ThreeD_DP_DP_On_Grids_02;
 
 import java.util.Arrays;
 
@@ -36,6 +36,24 @@ public class App09_UniquePaths_Obstacles_63 {
         }
         int ans = findSol(0, 0, endRow - 1, endCol - 1, dp, grid);
         System.out.println(ans);
+
+        /*
+            Time Complexity :
+            ------------------
+            Problem size: m x n grid
+            Each cell (row, col) is computed once due to memoization (dp[row][col] stores result).
+            Each cell does constant work (just 2 recursive calls + addition).
+            Time Complexity = O(m × n)
+
+            Space Complexity :
+            -------------------
+            DP Table: dp[m][n] → O(m × n)
+            Recursion stack: In the worst case, recursion goes along one path from (0,0) to (m-1,n-1)
+            → depth = (m + n - 1)
+            → O(m+n)
+            Space Complexity = O(m × n) + O(m+n)
+
+        */
 
     }
 }

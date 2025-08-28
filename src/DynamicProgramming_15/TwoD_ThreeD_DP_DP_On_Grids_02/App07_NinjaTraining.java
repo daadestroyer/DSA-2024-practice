@@ -1,4 +1,4 @@
-package DynamicProgramming_15;
+package DynamicProgramming_15.TwoD_ThreeD_DP_DP_On_Grids_02;
 
 import java.util.Arrays;
 
@@ -35,5 +35,22 @@ public class App07_NinjaTraining {
         }
         int res = findSolution(day - 1, 3, dp, matrix); // 3 is total task
         System.out.println(res);
+
+        /*
+            Time Complexity :
+            ------------------
+            You have day (rows) and last (4 possibilities: {0,1,2,3}).
+            Each state (day, last) is computed once and stored in dp.
+            For each state, you try up to 3 tasks.
+            T(n) = O(day \times 4 \times 3) = O(12 \times day) = O(day)
+            Time Complexity = O(n) where n = number of days.
+
+            Space Complexity :
+            ------------------
+            Recursion stack space → In worst case, depth = day → O(day).
+            DP table → dp[day][4] → O(4n) = O(n).
+            S(n) = O(n) \; (\text{DP}) + O(n) \; (recursion stack) = O(n)
+
+        */
     }
 }

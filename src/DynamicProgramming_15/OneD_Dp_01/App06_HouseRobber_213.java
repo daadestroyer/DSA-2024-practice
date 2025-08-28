@@ -1,6 +1,5 @@
-package DynamicProgramming_15;
+package DynamicProgramming_15.OneD_Dp_01;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class App06_HouseRobber_213 {

@@ -1,4 +1,4 @@
-package DynamicProgramming_15;
+package DynamicProgramming_15.TwoD_ThreeD_DP_DP_On_Grids_02;
 
 import java.util.Arrays;
 
@@ -31,5 +31,26 @@ public class App10_MinimumPathSum_64 {
             Arrays.fill(arr, -1);
         }
         System.out.println(findSol(0, 0, endRow - 1, endCol - 1, dp, grid));
+
+        /*
+            Time Complexity:
+            ----------------
+            Each cell (row, col) is visited at most once, because results are stored in dp[row][col].
+            For each cell, you do:
+                At most 2 recursive calls (down & right).
+                Constant-time operations (min, +, assignment).
+            Time Complexity = O(m × n)
+
+            Space Complexity:
+            ----------------
+            DP Table:
+	            dp[m][n] stores results → O(m × n)
+
+	        Recursion stack:
+                In the worst case, recursion depth = (m + n - 1)
+	            → O(m+n)
+	        Space Complexity = O(m × n) + O(m+n)
+
+        */
     }
 }

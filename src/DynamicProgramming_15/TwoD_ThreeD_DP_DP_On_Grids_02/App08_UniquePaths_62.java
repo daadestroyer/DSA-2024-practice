@@ -1,4 +1,4 @@
-package DynamicProgramming_15;
+package DynamicProgramming_15.TwoD_ThreeD_DP_DP_On_Grids_02;
 
 import java.util.Arrays;
 
@@ -30,5 +30,22 @@ public class App08_UniquePaths_62 {
             Arrays.fill(arr, -1);
         }
         System.out.println(findSol(0, 0, m - 1, n - 1, dp));
+
+        /*
+            Time Complexity :
+            ------------------
+            Each state is (row, col).
+            Maximum states = m × n (since grid is m x n).
+            Each state is computed once and then memoized.
+            Each state does 2 recursive calls at most (down + right), but after memoization it’s O(1).
+            Time Complexity = O(m × n)
+
+            Space Complexity:
+            ------------------
+            DP Table → dp[m][n] → O(m × n)
+            Recursion stack → O(m+n).
+            S(m, n) = O(m x n) + O(m+n)
+            Space Complexity = O(m × n) + O(m+n)
+        */
     }
 }
