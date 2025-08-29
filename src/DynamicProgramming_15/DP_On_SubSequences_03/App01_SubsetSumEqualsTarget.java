@@ -27,6 +27,20 @@ public class App01_SubsetSumEqualsTarget {
         int target = 9;
         Boolean[][] dp = new Boolean[arr.length][target + 1];
         System.out.println(isSubSetSum(0, arr, target, dp));
+
+        /*
+            Time Complexity:
+            -----------------
+            We are iterating over array recursively = O(n) untill target becomes 0 = O(target)
+            Time Complexity = O(n * target)
+
+            Space Complexity:
+            -----------------
+            DP Table = O(n * target)
+            Recursion stack = O(n)
+
+            Space Complexity = O(n * target)
+        */
     }
 }
 
