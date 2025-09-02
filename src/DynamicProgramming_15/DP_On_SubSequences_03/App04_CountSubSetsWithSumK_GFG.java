@@ -30,5 +30,18 @@ public class App04_CountSubSetsWithSumK_GFG {
             Arrays.fill(dp[i], -1);
         }
         System.out.println(countSubSet(0, arr, target, dp));
+        /*
+            Time Complexity:
+            ----------------
+            idx → ranges from 0 … n (n = arr.length)
+            target → ranges from 0 … target
+            TC : O(n * target)
+
+            Space Complexity:
+            ----------------
+            DP Array : Space = O(n * target)
+            Recursion Stack : O(n)
+            SC : O(n * target)
+        */
     }
 }
