@@ -44,5 +44,24 @@ public class App05_CountPartitionsWithGivenDifference_GFG {
         int[] arr = {5, 2, 6, 4};
         int d = 3;
         System.out.println(countPartitions(arr, d));
+
+        /*
+         Time Complexity:
+         ----------------
+         Two parameters matter:
+	        •	idx ∈ [0 … n] → n+1 possibilities
+	        •	target ∈ [0 … targetSum] → (targetSum+1) possibilities
+	      •	Each state (idx, target) is solved once due to memoization.
+       	  • Each state does O(1) work (just a couple of recursive calls).
+
+            TC: O(n * target)
+
+         Space Complexity:
+         ----------------
+            • DP table: int[n][target+1] → O(n × targetSum)
+            • Recursion Stack = O(n)
+
+            SC : O(n * targetSum)
+        */
     }
 }
