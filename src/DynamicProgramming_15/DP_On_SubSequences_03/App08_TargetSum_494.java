@@ -43,5 +43,22 @@ public class App08_TargetSum_494 {
         int[] nums = {1, 1, 1, 1, 1};
         int target = 3;
         System.out.println(findTargetSumWays(nums, target));
+
+        /*
+            Time Complexity:
+            ----------------
+            idx can take values 0 … n → n+1 possibilities
+            target can take values 0 … subSetSum → subSetSum+1 possibilities
+            TC = O(n × subSetSum)
+
+            Space Complexity:
+            ----------------
+            DP array
+	            •	int[n][subSetSum+1] → O(n × subSetSum)
+	        Recursion stack
+	            •	Maximum depth = n (we go through all indices) → O(n)
+
+	            SC : O(n × subSetSum)
+        */
     }
 }
