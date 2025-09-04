@@ -34,5 +34,9 @@ public class App09_01Knapsack_GFG {
         int val[] = {1, 2, 3};
         int wt[] = {4, 5, 1};
         System.out.println(knapSack(W, val, wt));
+        /*
+            TC : O(n * W);
+            SC : O(n * W) + O(n)
+        */
     }
 }
