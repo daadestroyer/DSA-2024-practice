@@ -17,6 +17,7 @@ public class App07_CoinChange_518_infinite_coin_and_return_number_of_combination
         }
         int pick = 0;
         if (coins[idx] <= amount) {
+            // not doing idx+1 as we have infinite supply
             pick = findCombinations(idx, coins, amount - coins[idx], dp);
         }
         int nonPick = findCombinations(idx + 1, coins, amount, dp);
