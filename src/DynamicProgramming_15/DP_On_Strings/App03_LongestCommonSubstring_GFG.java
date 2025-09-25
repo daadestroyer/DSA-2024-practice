@@ -2,7 +2,7 @@ package DynamicProgramming_15.DP_On_Strings;
 
 import java.util.Arrays;
 
-public class App04_LongestCommonSubstring_GFG {
+public class App03_LongestCommonSubstring_GFG {
     static int maxLen;
 
     public static int lcsSubString(int idx1, int idx2, String s1, String s2, int[][] dp) {
@@ -13,6 +13,9 @@ public class App04_LongestCommonSubstring_GFG {
             return dp[idx1][idx2];
         }
         int res = 0;
+        // we are checking diagonals means
+        // s1 = "abcdae" , s2="abcde" , i = s1.length-1 and j = s2.length-1
+        // if we keep doing fun(i--,j--) we will be checking only diagonals
         // if matches
         if (s1.charAt(idx1) == s2.charAt(idx2)) {
             res = 1 + lcsSubString(idx1 - 1, idx2 - 1, s1, s2, dp);
@@ -24,9 +27,9 @@ public class App04_LongestCommonSubstring_GFG {
         else {
             res = 0;
         }
-        // check up
+
         lcsSubString(idx1 - 1, idx2, s1, s2, dp);
-        // check down
+
         lcsSubString(idx1, idx2 - 1, s1, s2, dp);
         dp[idx1][idx2] = res;
         return res;
@@ -45,5 +48,10 @@ public class App04_LongestCommonSubstring_GFG {
         maxLen = 0;
         lcsSubString(n - 1, m - 1, s1, s2, dp);
         System.out.println(maxLen);
+
+        /*
+            Time Complexity: O(n * m)
+	        Space Complexity: O(n * m)
+        */
     }
 }

@@ -32,6 +32,10 @@ public class App01_LongestCommonSubsequence_1143 {
 
         System.out.println(getLongestSubSeq(text1.length() - 1, text2.length() - 1, text1, text2, dp));
 
+        /*
+            Time Complexity: O(m * n)
+            Space Complexity: O(m * n)
+        */
 
     }
 }

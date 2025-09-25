@@ -2,7 +2,7 @@ package DynamicProgramming_15.DP_On_Strings;
 
 import java.util.Arrays;
 
-public class App02_PrintLongestCommonSubSequence {
+public class App02_PrintLongestCommonSubSequence_GFG {
     public static int getLongestSubSeq(int idx1, int idx2, String s1, String s2, int[][] dp) {
         if (idx1 < 0 || idx2 < 0) {
             return 0;
@@ -68,5 +68,10 @@ public class App02_PrintLongestCommonSubSequence {
         System.out.println("Len = " + len);
         String str = buildLCS(text1, text2, dp);
         System.out.println("Str = " + str);
+
+        /*
+            Time Complexity: O(m * n)
+            Space Complexity: O(m * n)
+        */
     }
 }
