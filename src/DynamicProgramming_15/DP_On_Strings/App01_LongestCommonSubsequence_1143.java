@@ -22,9 +22,9 @@ public class App01_LongestCommonSubsequence_1143 {
 
 
 
-    public static void main(String[] args) {
-        String text1 = "abcde";
-        String text2 = "ace";
+    public static void main(String [] args) {
+        String text1 = "brute";
+        String text2 = "groot";
         int[][] dp = new int[text1.length()][text2.length()];
         for (int i = 0; i < text1.length(); i++) {
             Arrays.fill(dp[i], -1);

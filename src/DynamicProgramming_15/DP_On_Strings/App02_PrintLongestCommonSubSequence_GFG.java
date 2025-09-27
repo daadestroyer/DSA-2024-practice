@@ -55,8 +55,8 @@ public class App02_PrintLongestCommonSubSequence_GFG {
     }
 
     public static void main(String[] args) {
-        String text1 = "abcde";
-        String text2 = "ace";
+        String text1 = "brute";
+        String text2 = "groot";
         int n = text1.length();
         int m = text2.length();
 
@@ -69,6 +69,9 @@ public class App02_PrintLongestCommonSubSequence_GFG {
         String str = buildLCS(text1, text2, dp);
         System.out.println("Str = " + str);
 
+        for(int[] arr : dp){
+            System.out.println(Arrays.toString(arr));
+        }
         /*
             Time Complexity: O(m * n)
             Space Complexity: O(m * n)
