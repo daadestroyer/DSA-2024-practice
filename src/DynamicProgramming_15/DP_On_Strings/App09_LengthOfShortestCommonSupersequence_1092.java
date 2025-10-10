@@ -12,7 +12,7 @@ public class App09_LengthOfShortestCommonSupersequence_1092 {
         if (s1.charAt(idx1) == s2.charAt(idx2)) {
             res = 1 + findLenOfLongestCommonSubSequence(idx1 - 1, idx2 - 1, s1, s2, dp);
         } else {
-            res = 0 + Math.max(findLenOfLongestCommonSubSequence(idx1 - 1, idx2, s1, s2, dp), findLenOfLongestCommonSubSequence(idx1, idx2 - 1, s1, s2, dp));
+            res = Math.max(findLenOfLongestCommonSubSequence(idx1 - 1, idx2, s1, s2, dp), findLenOfLongestCommonSubSequence(idx1, idx2 - 1, s1, s2, dp));
         }
         dp[idx1][idx2] = res;
         return res;

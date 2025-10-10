@@ -11,7 +11,7 @@ public class App10_PrintShortestCommonSupersequence {
         if (s1.charAt(idx1) == s2.charAt(idx2)) {
             res = 1 + findLengthOfLongestCommonSubSequence(idx1 - 1, idx2 - 1, s1, s2, dp);
         } else {
-            res = 0 + Math.max(findLengthOfLongestCommonSubSequence(idx1 - 1, idx2, s1, s2, dp), findLengthOfLongestCommonSubSequence(idx1, idx2 - 1, s1, s2, dp));
+            res = Math.max(findLengthOfLongestCommonSubSequence(idx1 - 1, idx2, s1, s2, dp), findLengthOfLongestCommonSubSequence(idx1, idx2 - 1, s1, s2, dp));
         }
         dp[idx1][idx2] = res;
         return res;
@@ -28,9 +28,9 @@ public class App10_PrintShortestCommonSupersequence {
                 idx2--;
             } else {
                 int left = (idx2 - 1 >= 0) ? dp[idx1][idx2 - 1] : 0;
-                int right = (idx1 - 1 >= 0) ? dp[idx1 - 1][idx2] : 0;
+                int up = (idx1 - 1 >= 0) ? dp[idx1 - 1][idx2] : 0;
 
-                if (left >= right) {
+                if (left >= up) {
                     sb.append(s2.charAt(idx2));
                     idx2--;
                 } else {
