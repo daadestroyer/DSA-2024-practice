@@ -31,9 +31,9 @@ public class App08_MinimumDeletionOperationToMakeTwoStringSame_583 {
         for (int[] arr : dp) {
             Arrays.fill(arr, -1);
         }
-        lenOfCommonSubSequence = findLen(n - 1, m - 1, word1, word2, dp);
-        int deletionOP1 = n - lenOfCommonSubSequence;
-        int deletionOP2 = m - lenOfCommonSubSequence;
+        lenOfCommonSubSequence = findLen(n - 1, m - 1, word1, word2, dp); // 2
+        int deletionOP1 = n - lenOfCommonSubSequence; // 1
+        int deletionOP2 = m - lenOfCommonSubSequence; // 1
         System.out.println(deletionOP1+deletionOP2);
     }
 }
