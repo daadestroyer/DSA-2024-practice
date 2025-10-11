@@ -44,5 +44,20 @@ public class App02_BestTimeToBuyAndSellStock_MULTIPLE_TRANSACTIONS_ALLOWED_122 {
         // first time sending 1 because till now you didn't buy anything, so to sell you have to buy something
         int maxProfit = maxProfit(0, 1, prices, dp);
         System.out.println(maxProfit);
+
+        /*
+            Time Complexity:
+            ----------------
+            Each state (idx, canBuy) is computed once.
+            At each state, you only do O(1) work (a couple of recursive calls and a Math.max).
+            TC = O(n × 2) → O(2n) → O(n)
+
+            Space Complexity:
+            ---------------
+            There are two sources of space usage:
+	        1.	DP array: int[n][2] → O(2n) → O(n)
+	        2.	Recursion stack: recursion depth can go up to n → O(n)
+	        SC = O(n) (DP) + O(n) (stack) → O(n)
+        */
     }
 }

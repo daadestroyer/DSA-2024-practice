@@ -2,8 +2,7 @@ package DynamicProgramming_15.DP_ON_Stocks_05;
 
 import java.util.Arrays;
 
-public class App03_BestTimeToBuyAndSellStock_TWO_TRANSACTIONS_ALLOWED_123 {
-
+public class App04_BestTimeToBuyAndSellStock_K_TRANSACTION_ALLOWED_188 {
     public static int maxProfit(int idx, int canBuy, int transactionAllowed, int[] prices, int[][][] dp) {
         if (idx == prices.length || transactionAllowed == 0) {
             return 0;
@@ -38,39 +37,31 @@ public class App03_BestTimeToBuyAndSellStock_TWO_TRANSACTIONS_ALLOWED_123 {
     }
 
     public static void main(String[] args) {
-        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
-
-        // can only make 2 transactions(1 transaction means first buy then sell)
-        // // 2 because you have two option at each index either buy or sell it
-        int transactionAllowed = 2;
-        int canBuy = 1;
-
-        // include cap dimension (0..2)
-        // why did cap + 1 ? -->
-        // idx cap = 2(means two txn left)
-        // idx cap = 1 (means one txn left)
-        // idx cap = 0 (means no txn left)
-        int[][][] dp = new int[prices.length][2][transactionAllowed + 1];
-
+        int[] prices = {2, 4, 1};
+        int k = 2;
+        int[][][] dp = new int[prices.length][2][k + 1];
         for (int[][] arr : dp) {
             for (int[] arr1 : arr) {
                 Arrays.fill(arr1, -1);
             }
         }
-        System.out.println(maxProfit(0, 1, transactionAllowed, prices, dp));
+        System.out.println(maxProfit(0, 1, k, prices, dp));
         /*
             Time Complexity:
             ----------------
-            Each unique state is computed once and costs O(1) work.
-            Total states = n * 2 * 3 = 6n →
-            TC :  O(n) (constant factor 6 for k=2)
+            Each state is computed once due to memoization.
+	        Each state does O(1) work (a few recursive calls + max).
+            TC :  O(n * 2 * (k + 1)) = O(n * k)
 
             Space Complexity:
             ---------------
-            DP table: O(n * 2 * 3) = O(n)
-	        Recursion stack: worst-case depth n → O(n)
+            Two components:
+	        1.	DP table:
+                O(n * 2 * (k + 1)) = O(n * k)
+	        2.	Recursion stack:
+	            Max depth = n (one recursive call per day) O(n)
 
-	        SC :  O(n) (DP) + O(n) (stack) = O(n)
+	        Total auxiliary space = O(n * k + n) = O(n * k)
         */
     }
 }
