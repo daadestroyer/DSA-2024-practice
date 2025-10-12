@@ -43,7 +43,7 @@ public class App03_BestTimeToBuyAndSellStock_TWO_TRANSACTIONS_ALLOWED_123 {
         // can only make 2 transactions(1 transaction means first buy then sell)
         // // 2 because you have two option at each index either buy or sell it
         int transactionAllowed = 2;
-        int canBuy = 1;
+
 
         // include cap dimension (0..2)
         // why did cap + 1 ? -->

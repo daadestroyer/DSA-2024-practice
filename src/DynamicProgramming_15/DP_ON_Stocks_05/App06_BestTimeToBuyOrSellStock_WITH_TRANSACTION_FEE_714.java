@@ -34,5 +34,23 @@ public class App06_BestTimeToBuyOrSellStock_WITH_TRANSACTION_FEE_714 {
             Arrays.fill(arr, -1);
         }
         System.out.println(findMaxProfit(0, 1, fee, prices, dp));
+
+        /*
+            Time Complexity:
+            ----------------
+            Each state (idx, canBuy) is computed once because of memoization, and every call performs only O(1) work (two recursive calls + Math.max).
+            TC :  O(n)
+
+            Space Complexity:
+            ---------------
+            Two main sources of space usage:
+	        1.	DP array:
+                int[n][2] → O(2n) → O(n)
+	        2.	Recursion stack:
+                In the worst case (deep recursion on all n days) → O(n)
+
+                 Total Space = O(n) + O(n) = O(n)
+        */
+
     }
 }
