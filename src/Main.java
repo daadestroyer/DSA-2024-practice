@@ -1,46 +1,22 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
+
+class Employee{
+
+}
 public class Main {
-    public static void countFrequencies(int[] arr, int n) {
-        // Step 1: Increase values at indexes based on elements found
-        for (int i = 0; i < n; i++) {
-            // Find index to increment
-            int index = arr[i] % n;
-            if (index != 0) {
-                arr[index - 1] += n;
-            }
-        }
-        System.out.println(Arrays.toString(arr));
-        // Step 2: Calculate frequencies based on modified values
-        for (int i = 0; i < n; i++) {
-            arr[i] = arr[i] / n;
-        }
-    }
+
 
     public static void main(String[] args) {
-        int n = 4;
-        int[] arr = {3,3,3,3};
-        HashMap<Integer, Integer> hm = new HashMap<>();
+        List<Integer> list = Arrays.asList(100, 20, 200, 100, 100, 200, 4, 1, 3, 5, 2, 4, 6, 10, 6, 10, 1, 2, 3);
+        Map<Integer, Long> ans1 = list.stream().collect(Collectors.groupingBy(no -> no, Collectors.counting()));
+        TreeMap<Integer, Long> ans2 = list.stream().collect(Collectors.groupingBy(no -> no, TreeMap::new, Collectors.counting()));
 
-        bruteForceApproach(arr, n, hm);
-        System.out.println(Arrays.toString(arr));
-
+        System.out.println(ans1);
+        System.out.println(ans2);
 
     }
-
-    private static void bruteForceApproach(int[] arr, int n, HashMap<Integer, Integer> hm) {
-        for (int i = 0; i < n; i++) {
-            hm.put(arr[i], hm.getOrDefault(arr[i], 0) + 1);
-        }
-        for (int i = 1; i <= n; i++) {
-            if (hm.containsKey(i)) {
-                arr[i-1] = hm.get(i);
-            } else {
-                arr[i-1] = 0;
-            }
-        }
-    }
-
 
 
 }
