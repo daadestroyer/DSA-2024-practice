@@ -24,11 +24,16 @@ public class App01_LongestIncreasingSubSequence_300 {
     public static void main(String[] args) {
         int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
         int n = nums.length;
+        // taking -1 because prev_idx we have taken from -1
         int[][] dp = new int[n][n + 1];
         for (int[] arr : dp) {
             Arrays.fill(arr, -1);
         }
         int len = findLIS(0, -1, nums, dp);
         System.out.println(len);
+        for(int[] arr : dp){
+            System.out.println(Arrays.toString(arr));
+        }
+
     }
 }
