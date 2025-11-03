@@ -11,23 +11,17 @@ public class App02_TwoSum_1 {
     }
 
     private static int[] findTwoSum(int[] nums, int target, int n) {
-        int left = 0;
-        int right = nums.length - 1;
+        Map<Integer, Integer> hm = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
 
-        while (left < right) {
-            int sum = nums[left] + nums[right];
-
-            if (sum == target) {
-                // return indices (0-based)
-                return new int[]{left, right};
-            } else if (sum < target) {
-                left++;  // move rightward to increase sum
+        for (int i = 0; i < n; i++) {
+            if (hm.containsKey(target - nums[i])) {
+                list.add(hm.get(target - nums[i]));
+                list.add(i);
             } else {
-                right--; // move leftward to decrease sum
+                hm.put(nums[i], i);
             }
         }
-
-        // no pair found
-        return new int[]{-1, -1};
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 }
